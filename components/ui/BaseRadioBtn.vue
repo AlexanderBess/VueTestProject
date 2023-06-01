@@ -27,7 +27,7 @@ export default {
     modelValue: {
       default: ""
     },
-    "value": {
+    value: {
       type: String,
       default: undefined
     }

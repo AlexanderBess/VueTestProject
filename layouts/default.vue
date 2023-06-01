@@ -23,7 +23,7 @@ export default {
     height: 100vh;
     overflow-y: auto;
     background: $black2;
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Quicksand-Regular', sans-serif;
     font-style: normal;
     color: $white;
     &__body {

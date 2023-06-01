@@ -16,21 +16,25 @@
         type="Public"
         :table-data="tableData"/>
       <div class="body__additional">
-        <div class="body__title">Filter</div>
-        <div class="body__filters">
-          <BaseRadioBtn
-              label="Public certifications" value="public" v-model="MySelectedValue"/>
-          <BaseRadioBtn
-              label="Private certifications" value="private" v-model="MySelectedValue"/>
-          <BaseRadioBtn
-              label="Both" value="both" v-model="MySelectedValue"/>
+        <div class="body__block">
+          <div class="body__title">Filter</div>
+          <div class="body__filters">
+            <BaseRadioBtn
+                label="Public certifications" value="public" v-model="MySelectedValue"/>
+            <BaseRadioBtn
+                label="Private certifications" value="private" v-model="MySelectedValue"/>
+            <BaseRadioBtn
+                label="Both" value="both" v-model="MySelectedValue"/>
+          </div>
         </div>
-        <div class="body__title">Actions</div>
-        <div class="body__actions actions">
-          <button
-              v-for="(button) in buttons"
-              class="actions__button"
-              :class="`actions__button_${button.type}`">{{button.name}}</button>
+        <div class="body__block">
+          <div class="body__title">Actions</div>
+          <div class="body__actions actions">
+            <button
+                v-for="(button) in buttons"
+                class="actions__button"
+                :class="`actions__button_${button.type}`">{{button.name}}</button>
+          </div>
         </div>
       </div>
     </div>
@@ -98,6 +102,7 @@ export default {
   &__body {
     display: flex;
     gap: 40px;
+    margin: 24px 40px 24px 21px;
   }
 }
 .head {
@@ -126,11 +131,8 @@ export default {
   }
 }
 .body {
-  &__table {
-    margin: 24px 0 24px 21px;
-  }
   &__additional {
-    margin: 36px 40px 0 0;
+    margin: 12px 0 0 0;
   }
   &__title {
     margin-bottom: 24px;
@@ -162,6 +164,9 @@ export default {
     padding: 0 48px 0 48px;
     border-radius: 30px;
 
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
     color: $white;
     &_active {
       background: linear-gradient(230.15deg, #9580FF 0%, #A361FF 92.48%);
@@ -170,6 +175,55 @@ export default {
     &_inactive {
       background: #B0AEB9;
       box-shadow: 2px 2px 7px rgba(11, 10, 13, 0.44), inset 1px 1px 4px rgba(241, 231, 255, 0.3);
+    }
+  }
+}
+@include _991 {
+  .content {
+    &__body {
+      display: flex;
+      align-items: center;
+      flex-direction: column-reverse;
+      margin: 20px;
+      gap: 40px;
+    }
+  }
+  .body {
+    &__table {
+      margin: 0;
+    }
+    &__additional {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      gap: 20px;
+    }
+    &__actions {
+      width: 100%;
+    }
+  }
+}
+@include _575 {
+  .head {
+    &__input {
+      min-width: 114px;
+    }
+  }
+  .content {
+    &__body {
+      gap: 30px;
+    }
+  }
+  .body {
+    &__additional {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      gap: 30px;
+    }
+    &__filters {
+      margin-bottom: 0;
     }
   }
 }
