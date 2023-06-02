@@ -1,6 +1,6 @@
 <template>
   <div class="empty__content">
-    <img src="~/assets/img/ui/empty.jpg" alt="empty">
+    <img src="~/assets/img/ui/empty.gif" alt="empty">
   </div>
 </template>
 
